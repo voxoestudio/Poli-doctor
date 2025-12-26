@@ -15,11 +15,11 @@
         /* --- DESIGN SYSTEM: PREMIUM HEALTHTECH --- */
         :root {
             /* Cores extraídas e refinadas da imagem de referência */
-            --primary: #059669; /* Verde da marca (mais sóbrio que a referência) */
-            --primary-dark: #064E3B; /* Verde Profundo para contrastes */
-            --primary-light: #ECFDF5; /* Verde Menta para fundos */
+            --primary: #059669; /* Verde da marca */
+            --primary-dark: #064E3B; /* Verde Profundo */
+            --primary-light: #ECFDF5; /* Verde Menta */
             
-            --accent: #F59E0B; /* Amarelo/Dourado (Inspirado na ref, mas menos "varejo") */
+            --accent: #F59E0B; /* Amarelo/Dourado */
             --accent-hover: #D97706;
             
             --text-main: #111827;
@@ -28,9 +28,9 @@
             --bg-alt: #F9FAFB;
             
             --border: #E5E7EB;
-            --radius: 16px; /* Bordas arredondadas (como na imagem de ref) */
+            --radius: 16px;
             
-            /* Sombras de Alta Performance (Estilo Apple/Stripe) */
+            /* Sombras de Alta Performance */
             --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
             
@@ -58,13 +58,12 @@
         .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
         section { padding: 96px 0; }
         
-        /* Fundos (Inspirado nas faixas coloridas da imagem de ref) */
         .bg-white { background: white; }
         .bg-light { background: var(--bg-alt); }
-        .bg-brand { background: var(--primary-dark); color: white; } /* Seção verde escura */
-        .bg-accent-soft { background: #FFFBEB; } /* Seção amarela suave */
+        .bg-brand { background: var(--primary-dark); color: white; }
+        .bg-accent-soft { background: #FFFBEB; }
 
-        /* --- HEADER (Glassmorphism) --- */
+        /* --- HEADER --- */
         .header {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
             background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px);
@@ -77,7 +76,7 @@
         .nav-menu a { color: var(--text-body); font-weight: 500; font-size: 0.95rem; }
         .nav-menu a:hover { color: var(--primary); }
 
-        /* --- BOTÕES (Estilo Arredondado da Ref) --- */
+        /* --- BOTÕES --- */
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
             padding: 14px 32px; border-radius: 50px; font-weight: 600; cursor: pointer;
@@ -92,14 +91,14 @@
         .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero { position: relative; overflow: hidden; }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
         .hero-tags { display: flex; gap: 16px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
         .tag { font-size: 0.9rem; font-weight: 500; color: var(--text-main); display: flex; align-items: center; gap: 6px; }
         .tag i { color: var(--primary); }
 
-        /* --- FEATURES GRID (Inspirado nos ícones da ref) --- */
+        /* --- FEATURES --- */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
         .feature-card {
             background: white; padding: 32px; border-radius: var(--radius);
@@ -113,22 +112,13 @@
             font-size: 1.5rem; margin-bottom: 20px;
         }
 
-        /* --- SEÇÃO ZIG-ZAG (Estilo Imagem + Texto) --- */
+        /* --- ZIG-ZAG --- */
         .split-sec { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .order-flip .txt { order: 2; }
         .order-flip .img { order: 1; }
-        
-        .img-frame {
-            position: relative; border-radius: var(--radius); overflow: hidden;
-            box-shadow: var(--shadow-hover);
-        }
-        /* Elemento decorativo atrás da imagem (Inspirado no fundo amarelo da ref) */
-        .img-backdrop {
-            position: absolute; width: 100%; height: 100%; top: 20px; left: 20px;
-            background: var(--accent); opacity: 0.1; border-radius: var(--radius); z-index: -1;
-        }
+        .img-frame { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-hover); }
 
-        /* --- PLANOS (Inspirado nas colunas da ref) --- */
+        /* --- PLANOS --- */
         .plans-alert {
             background: #FFFBEB; border: 1px solid #FCD34D; color: #92400E;
             padding: 16px; border-radius: var(--radius); text-align: center;
@@ -144,7 +134,7 @@
         .plan-card:hover { border-color: var(--primary); box-shadow: var(--shadow-hover); }
         
         .plan-card.premium {
-            border: 2px solid var(--primary); background: #FFFFF0; /* Fundo sutilmente quente */
+            border: 2px solid var(--primary); background: #FFFFF0;
             transform: scale(1.05); z-index: 10;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
@@ -192,24 +182,27 @@
                 <li><a href="#planos">Planos</a></li>
             </ul>
             <a href="#planos" class="btn btn-primary desktop-btn">Área do Paciente</a>
-            <i class="ri-menu-line" style="font-size: 1.5rem; display: none;"></i> </div>
+            <i class="ri-menu-line" style="font-size: 1.5rem; display: none;"></i>
+        </div>
     </header>
 
     <section id="inicio" class="hero bg-light">
         <div class="container hero-grid">
             <div class="hero-txt">
                 <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Sem filas. Sem burocracia.</span>
-                <h1 style="margin: 16px 0 24px;">Consulta médica de verdade, onde você estiver.</h1>
-                <p style="margin-bottom: 32px;">Atendimento online por vídeo, chat ou telefone. Prescrição digital, pedidos de exames e total segurança dos seus dados.</p>
+                <h1 style="margin: 16px 0 24px;">Consulta médica de verdade. Sem filas. Sem burocracia.</h1>
+                <p style="margin-bottom: 32px;">Fale com um médico qualificado em minutos, onde você estiver. Atendimento online por vídeo, chat ou telefone — com prescrição digital, pedidos de exames e total segurança dos seus dados.</p>
                 
                 <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="#planos" class="btn btn-primary">Assinar Agora</a>
-                    <a href="#medicos" class="btn btn-outline">Falar com médico</a>
+                    <a href="#planos" class="btn btn-primary">Assinar agora</a>
+                    <a href="#medicos" class="btn btn-outline">Falar com um médico</a>
                 </div>
+                
+                <p style="font-size: 0.9rem; margin-top: 16px; color: var(--primary-dark);">👉 Comece agora e cuide da sua saúde com quem realmente cuida.</p>
 
                 <div class="hero-tags">
-                    <div class="tag"><i class="ri-time-line"></i> Atendimento em 15min</div>
-                    <div class="tag"><i class="ri-24-hours-line"></i> Disponível 24/7</div>
+                    <div class="tag"><i class="ri-time-line"></i> Consulta em até 15 minutos</div>
+                    <div class="tag"><i class="ri-24-hours-line"></i> Atendimento 24/7</div>
                 </div>
             </div>
             <div class="hero-img">
@@ -224,16 +217,18 @@
                 <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paciente feliz">
             </div>
             <div class="txt">
-                <h2 style="color: white; margin-bottom: 24px;">Por que a Poli Doctor existe?</h2>
-                <p style="color: #D1FAE5; margin-bottom: 24px;">Porque saúde não pode esperar. A Poli Doctor nasceu para simplificar o acesso à saúde, conectando pessoas a médicos reais com rapidez, ética e humanização.</p>
+                <h2 style="color: white; margin-bottom: 24px;">🚀 Por que a Poli Doctor existe?</h2>
+                <p style="color: #D1FAE5; margin-bottom: 16px;">Porque saúde não pode esperar. Porque filas não curam. Porque deslocamento não deveria ser um obstáculo.</p>
+                <p style="color: #ffffff; margin-bottom: 24px;">A Poli Doctor nasceu para simplificar o acesso à saúde, conectando pessoas a médicos reais, com rapidez, ética e humanização — usando tecnologia para aproximar, não para complicar.</p>
+                
                 <div style="display: flex; gap: 24px;">
                     <div>
-                        <h3 style="color: var(--accent); font-size: 2rem;">+50k</h3>
-                        <span style="color: #D1FAE5; font-size: 0.9rem;">Vidas atendidas</span>
+                        <h3 style="color: var(--accent); font-size: 1.5rem;">100%</h3>
+                        <span style="color: #D1FAE5; font-size: 0.9rem;">Seguro e Criptografado</span>
                     </div>
                     <div>
-                        <h3 style="color: var(--accent); font-size: 2rem;">4.9</h3>
-                        <span style="color: #D1FAE5; font-size: 0.9rem;">Nota de satisfação</span>
+                        <h3 style="color: var(--accent); font-size: 1.5rem;">LGPD</h3>
+                        <span style="color: #D1FAE5; font-size: 0.9rem;">Conformidade Total</span>
                     </div>
                 </div>
             </div>
@@ -243,29 +238,29 @@
     <section>
         <div class="container">
             <div style="text-align: center; max-width: 600px; margin: 0 auto 64px;">
-                <h2>Atendimento rápido quando você precisa</h2>
-                <p>Tecnologia que coloca o médico na palma da sua mão.</p>
+                <h2>⏱️ Atendimento rápido quando você precisa</h2>
+                <p>*Em horário comercial. Fora dele, agendamento no mesmo dia.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="icon-wrap"><i class="ri-timer-flash-line"></i></div>
-                    <h3>Em até 15 minutos</h3>
+                    <h3>Consulta em até 15 min</h3>
                     <p>Consulta médica rápida sem sair de casa.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-wrap"><i class="ri-customer-service-2-line"></i></div>
                     <h3>Atendimento 24/7</h3>
-                    <p>Médicos disponíveis dia e noite, sem filas.</p>
+                    <p>Médicos disponíveis dia e noite, 7 dias por semana.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-wrap"><i class="ri-smartphone-line"></i></div>
-                    <h3>De onde estiver</h3>
-                    <p>Acesse pelo celular ou computador com facilidade.</p>
+                    <h3>Sem filas</h3>
+                    <p>Sem espera, sem deslocamento.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon-wrap"><i class="ri-shield-check-line"></i></div>
-                    <h3>100% Seguro</h3>
-                    <p>Dados criptografados e sigilo médico garantido.</p>
+                    <div class="icon-wrap"><i class="ri-map-pin-user-line"></i></div>
+                    <h3>De onde estiver</h3>
+                    <p>Atendimento remoto de qualquer lugar.</p>
                 </div>
             </div>
         </div>
@@ -274,15 +269,15 @@
     <section id="como-funciona" class="bg-light">
         <div class="container split-sec order-flip">
             <div class="txt">
-                <h2>Como funciona?</h2>
-                <p style="margin-bottom: 32px;">Simples, seguro e eficiente. Em 3 passos você resolve sua saúde.</p>
+                <h2>📱 Como funciona?</h2>
+                <p style="margin-bottom: 32px;">Simples. Seguro. E eficiente.</p>
                 
                 <div style="display: flex; flex-direction: column; gap: 24px;">
                     <div style="display: flex; gap: 16px;">
                         <div style="background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
                         <div>
                             <h4>Escolha o atendimento</h4>
-                            <p style="font-size: 0.95rem;">Vídeo, chat ou telefone — do jeito mais confortável.</p>
+                            <p style="font-size: 0.95rem;">Vídeo, chat ou telefone — do jeito mais confortável para você.</p>
                         </div>
                     </div>
                     <div style="display: flex; gap: 16px;">
@@ -296,7 +291,7 @@
                         <div style="background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
                         <div>
                             <h4>Receba tudo digitalmente</h4>
-                            <p style="font-size: 0.95rem;">Receitas e exames no seu histórico online.</p>
+                            <p style="font-size: 0.95rem;">Receitas, exames e orientações ficam no seu histórico médico online.</p>
                         </div>
                     </div>
                 </div>
@@ -310,63 +305,77 @@
     <section id="planos">
         <div class="container">
             <div style="text-align: center; margin-bottom: 48px;">
-                <h2>Planos Poli Doctor</h2>
-                <p>Economia real todos os meses. Cancele quando quiser.</p>
+                <h2>💰 Planos Poli Doctor</h2>
+                <p>Saúde acessível hoje. Economia real todos os meses.</p>
             </div>
 
             <div class="plans-alert">
                 <i class="ri-alarm-warning-line"></i>
-                <span>Oferta por tempo limitado: Preços subirão 35% em breve.</span>
+                <span>⚠️ Oferta especial por tempo limitado: Os valores abaixo são promocionais. Após o encerramento da campanha, os planos terão reajuste médio de 35%.</span>
             </div>
 
             <div class="plans-container">
                 <div class="plan-card">
-                    <h4>Individual</h4>
-                    <span class="price">R$ 39,90</span>
-                    <span class="price-old">De R$ 53,90</span>
+                    <h4>🩺 Plano Individual</h4>
+                    <p style="font-size:0.9rem; color:#666;">Ideal para quem quer praticidade e segurança no dia a dia</p>
+                    <span class="price">R$ 39,90 / mês</span>
+                    <span class="price-old">De R$ 53,90 / mês</span>
                     <ul class="check-list">
-                        <li><i class="ri-check-line"></i> Consultas 24/7</li>
-                        <li><i class="ri-check-line"></i> Prescrição digital</li>
-                        <li><i class="ri-check-line"></i> Sem carência</li>
+                        <li><i class="ri-check-line"></i> Consultas médicas online 24/7</li>
+                        <li><i class="ri-check-line"></i> Atendimento por vídeo, chat ou telefone</li>
+                        <li><i class="ri-check-line"></i> Prescrição digital válida</li>
+                        <li><i class="ri-check-line"></i> Sem filas e sem deslocamento</li>
                     </ul>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Assinar Agora</a>
+                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">👉 Economia mensal: R$ 14,00</p>
+                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top:16px;">Assinar agora</a>
                 </div>
 
                 <div class="plan-card premium">
                     <div class="badge-pop">Recomendado</div>
-                    <h4 style="color: var(--primary);">Premium</h4>
-                    <span class="price">R$ 79,90</span>
-                    <span class="price-old">De R$ 107,90</span>
+                    <h4 style="color: var(--primary);">⭐ Plano Premium</h4>
+                    <p style="font-size:0.9rem; color:#666;">Cuidado contínuo, acompanhamento e prioridade</p>
+                    <span class="price">R$ 79,90 / mês</span>
+                    <span class="price-old">De R$ 107,90 / mês</span>
                     <ul class="check-list">
-                        <li><i class="ri-check-double-line"></i> <strong>Consultas Ilimitadas</strong></li>
-                        <li><i class="ri-check-line"></i> Atendimento Prioritário</li>
-                        <li><i class="ri-check-line"></i> Especialistas inclusos</li>
+                        <li><i class="ri-check-double-line"></i> <strong>Consultas médicas ilimitadas</strong></li>
+                        <li><i class="ri-check-line"></i> Atendimento prioritário</li>
+                        <li><i class="ri-check-line"></i> Acesso a especialistas sem custo adicional</li>
+                        <li><i class="ri-check-line"></i> Histórico médico digital completo</li>
+                        <li><i class="ri-check-line"></i> Acompanhamento contínuo</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Quero Premium</a>
+                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">👉 Economia mensal: R$ 28,00</p>
+                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top:16px;">Quero o Premium</a>
                 </div>
 
                 <div class="plan-card">
-                    <h4>Família</h4>
-                    <span class="price">R$ 69,90</span>
-                    <span class="price-old">De R$ 94,90</span>
+                    <h4>👨‍👩‍👧 Plano Família</h4>
+                    <p style="font-size:0.9rem; color:#666;">Mais saúde para quem cuida de todos</p>
+                    <span class="price">R$ 69,90 / mês</span>
+                    <span class="price-old">De R$ 94,90 / mês</span>
                     <ul class="check-list">
-                        <li><i class="ri-check-line"></i> Até 4 pessoas</li>
-                        <li><i class="ri-check-line"></i> Consultas ilimitadas</li>
+                        <li><i class="ri-check-line"></i> Consultas ilimitadas para até 4 pessoas</li>
                         <li><i class="ri-check-line"></i> Atendimento 24/7</li>
+                        <li><i class="ri-check-line"></i> Prescrição e pedidos de exames digitais</li>
+                        <li><i class="ri-check-line"></i> Mais economia e mais conveniência</li>
                     </ul>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Assinar Família</a>
+                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">👉 Economia mensal: R$ 25,00</p>
+                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top:16px;">Assinar plano família</a>
                 </div>
                 
                  <div class="plan-card">
-                    <h4>Família+</h4>
-                    <span class="price">R$ 119,90</span>
-                    <span class="price-old">De R$ 161,90</span>
+                    <h4>👑 Plano Família Premium</h4>
+                    <p style="font-size:0.9rem; color:#666;">O cuidado completo para toda a família</p>
+                    <span class="price">R$ 119,90 / mês</span>
+                    <span class="price-old">De R$ 161,90 / mês</span>
                     <ul class="check-list">
-                        <li><i class="ri-check-double-line"></i> Tudo do Família</li>
-                        <li><i class="ri-check-line"></i> Prioridade na fila</li>
-                        <li><i class="ri-check-line"></i> Especialistas</li>
+                        <li><i class="ri-check-double-line"></i> Tudo do Plano Família</li>
+                        <li><i class="ri-check-line"></i> Atendimento prioritário</li>
+                        <li><i class="ri-check-line"></i> Especialistas incluídos</li>
+                        <li><i class="ri-check-line"></i> Histórico médico individual por membro</li>
+                        <li><i class="ri-check-line"></i> Cuidado integral e contínuo</li>
                     </ul>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Ver Detalhes</a>
+                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">👉 Economia mensal: R$ 42,00</p>
+                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top:16px;">Quero o plano completo</a>
                 </div>
             </div>
         </div>
@@ -374,11 +383,12 @@
 
     <section class="bg-accent-soft" style="text-align: center;">
         <div class="container">
-            <h2 style="color: #92400E; margin-bottom: 24px;">Sua saúde não pode esperar.<br>Seu desconto também não.</h2>
+            <h2 style="color: #92400E; margin-bottom: 24px;">📣 Sua saúde não pode esperar.<br>Seu desconto também não.</h2>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="#planos" class="btn btn-accent">Travar valor promocional</a>
-                <a href="#medicos" class="btn" style="background: white; border: 1px solid #FCD34D; color: #B45309;">Falar com médico</a>
+                <a href="#planos" class="btn btn-accent">Assinar agora com desconto</a>
+                <a href="#medicos" class="btn" style="background: white; border: 1px solid #FCD34D; color: #B45309;">Falar com um médico em minutos</a>
             </div>
+            <p style="margin-top:20px; font-weight:bold; color:#B45309;">👉 Travar o valor promocional hoje</p>
         </div>
     </section>
 
