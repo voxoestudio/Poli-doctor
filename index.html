@@ -8,13 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
-        /* --- DESIGN SYSTEM: PREMIUM HEALTHTECH --- */
+        /* --- DESIGN SYSTEM --- */
         :root {
-            /* Cores inalteradas */
             --primary: #059669;
             --primary-dark: #064E3B;
             --primary-light: #ECFDF5;
@@ -30,7 +28,6 @@
             --border: #E5E7EB;
             --radius: 16px;
             
-            /* Sombras */
             --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
             
@@ -49,15 +46,15 @@
             padding-top: var(--header-h);
         }
 
-        /* Títulos Base (Mobile First) */
-        h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); line-height: 1.2; }
-        p { color: var(--text-body); font-weight: 400; font-size: 1rem; }
+        /* Tipografia Base */
+        h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); line-height: 1.2; margin-bottom: 16px; }
+        p { color: var(--text-body); font-weight: 400; font-size: 1rem; margin-bottom: 24px; }
         img { max-width: 100%; display: block; border-radius: var(--radius); }
         a { text-decoration: none; transition: 0.3s; }
 
         /* --- UTILS --- */
         .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-        section { padding: 64px 0; } /* Padding base mobile */
+        section { padding: 80px 0; } /* Espaçamento base confortável */
         
         .bg-white { background: white; }
         .bg-light { background: var(--bg-alt); }
@@ -67,7 +64,7 @@
         /* --- HEADER --- */
         .header {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border); z-index: 1000;
             display: flex; align-items: center;
         }
@@ -80,8 +77,9 @@
         /* --- BOTÕES --- */
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 14px 32px; border-radius: 50px; font-weight: 600; cursor: pointer;
+            padding: 16px 32px; border-radius: 50px; font-weight: 600; cursor: pointer;
             transition: all 0.2s; border: none; font-size: 1rem;
+            margin-top: 16px; margin-bottom: 8px; /* Respiro vertical */
         }
         .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
         .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
@@ -92,15 +90,17 @@
         .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* --- HERO --- */
+        /* --- SEÇÕES ESPECÍFICAS --- */
+        
+        /* Hero */
         .hero { position: relative; overflow: hidden; }
-        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
-        .hero-tags { display: flex; gap: 16px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
-        .tag { font-size: 0.9rem; font-weight: 500; color: var(--text-main); display: flex; align-items: center; gap: 6px; }
-        .tag i { color: var(--primary); }
+        .hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+        .hero-tags { display: flex; gap: 24px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .tag { font-size: 0.95rem; font-weight: 500; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+        .tag i { color: var(--primary); font-size: 1.2rem; }
 
-        /* --- FEATURES --- */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 64px; }
         .feature-card {
             background: white; padding: 32px; border-radius: var(--radius);
             border: 1px solid var(--border); transition: 0.3s;
@@ -108,133 +108,94 @@
         }
         .feature-card:hover { border-color: var(--primary); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
         .icon-wrap {
-            width: 56px; height: 56px; background: var(--primary-light); color: var(--primary);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 20px;
+            width: 64px; height: 64px; background: var(--primary-light); color: var(--primary);
+            border-radius: 16px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.75rem; margin-bottom: 24px;
         }
 
-        /* --- ZIG-ZAG --- */
-        .split-sec { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .order-flip .txt { order: 2; }
-        .order-flip .img { order: 1; }
-        .img-frame { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-hover); }
-
-        /* --- PLANOS --- */
+        /* Zig-Zag */
+        .split-sec { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: center; }
+        
+        /* Planos */
         .plans-alert {
             background: #FFFBEB; border: 1px solid #FCD34D; color: #92400E;
-            padding: 16px; border-radius: var(--radius); text-align: center;
-            margin-bottom: 48px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 24px; border-radius: var(--radius); text-align: center;
+            margin-bottom: 64px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 12px;
         }
-        .plans-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: stretch; }
+        
+        /* Container Planos Mobile (Padrão 1 coluna) */
+        .plans-container { 
+            display: grid; 
+            grid-template-columns: 1fr; /* Empilhado no mobile */
+            gap: 32px; 
+        }
         
         .plan-card {
             background: white; border: 1px solid var(--border); border-radius: var(--radius);
-            padding: 32px 24px; display: flex; flex-direction: column; position: relative;
-            transition: 0.3s;
+            padding: 40px 32px; display: flex; flex-direction: column; position: relative;
+            transition: 0.3s; height: 100%; /* Altura igualada se grid permitir */
         }
         .plan-card:hover { border-color: var(--primary); box-shadow: var(--shadow-hover); }
         
         .plan-card.premium {
             border: 2px solid var(--primary); background: #FFFFF0;
-            transform: scale(1.05); z-index: 10;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 2;
         }
         .badge-pop {
             position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-            background: var(--primary); color: white; padding: 4px 12px;
-            border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            background: var(--primary); color: white; padding: 6px 16px;
+            border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
         }
         
-        /* Preços e Listas (Base) */
-        .price { font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 16px 0 8px; display: block; }
-        .price-old { text-decoration: line-through; color: var(--text-body); font-size: 0.9rem; opacity: 0.7; display: block; }
-        .check-list { list-style: none; margin: 24px 0; flex-grow: 1; }
-        .check-list li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; }
+        .price { font-size: 3rem; font-weight: 700; color: var(--text-main); margin: 24px 0 8px; line-height: 1; }
+        .price-old { text-decoration: line-through; color: var(--text-body); font-size: 1rem; opacity: 0.7; margin-bottom: 24px; }
+        
+        .check-list { list-style: none; margin: 24px 0; flex-grow: 1; /* Empurra botão para baixo */ }
+        .check-list li { display: flex; gap: 12px; margin-bottom: 16px; font-size: 1.05rem; }
         .check-list i { color: var(--primary); flex-shrink: 0; margin-top: 4px; }
-        .economy-text { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-top: 10px; display: block; }
+        
+        .economy-text { display: block; font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-top: 16px; text-align: center; }
+        .plan-card .btn { margin-top: auto; /* Garante alinhamento inferior do botão */ width: 100%; }
 
-        /* --- FOOTER --- */
-        .footer { background: #111827; color: white; padding: 80px 0 32px; }
-        .ft-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; border-bottom: 1px solid #374151; padding-bottom: 40px; margin-bottom: 40px; }
-        .ft-col h4 { color: white; margin-bottom: 24px; font-size: 1.1rem; }
-        .ft-col a { display: block; color: #9CA3AF; margin-bottom: 12px; }
+        /* Footer */
+        .footer { background: #111827; color: white; padding: 96px 0 48px; }
+        .ft-grid { display: grid; grid-template-columns: 1fr; gap: 48px; border-bottom: 1px solid #374151; padding-bottom: 64px; margin-bottom: 48px; }
+        .ft-col h4 { color: white; margin-bottom: 24px; font-size: 1.2rem; }
+        .ft-col a { display: block; color: #9CA3AF; margin-bottom: 16px; font-size: 1rem; }
         .ft-col a:hover { color: var(--primary); }
 
-        /* --- RESPONSIVIDADE (MOBILE) --- */
-        @media (max-width: 960px) {
-            .hero-grid, .split-sec { grid-template-columns: 1fr; gap: 40px; }
-            .nav-menu, .desktop-btn { display: none; }
-            .order-flip .txt { order: unset; }
-            .order-flip .img { order: unset; }
-            .plan-card.premium { transform: scale(1); }
-            .hero h1 { font-size: 2.5rem; }
+        /* --- DESKTOP (Min-Width 1024px) --- */
+        @media (min-width: 1024px) {
+            section { padding: 120px 0; } /* Mais respiro vertical no desktop */
+            
+            h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 32px; }
+            h2 { font-size: 2.5rem; margin-bottom: 32px; }
+            p { font-size: 1.125rem; margin-bottom: 32px; }
+            
+            .hero-grid { grid-template-columns: 1.2fr 1fr; gap: 80px; }
+            .split-sec { grid-template-columns: 1fr 1fr; gap: 96px; }
+            
+            .order-flip .txt { order: 2; }
+            .order-flip .img { order: 1; }
+            
+            .features-grid { grid-template-columns: repeat(4, 1fr); gap: 32px; }
+            
+            /* Grid de Planos 2x2 no Desktop */
+            .plans-container { 
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+                gap: 40px; /* Espaço generoso entre cards */
+                max-width: 960px; /* Limita largura para não esticar demais */
+                margin: 0 auto;
+            }
+            .plan-card.premium { transform: scale(1.05); }
+            
+            .ft-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
         }
 
-        /* --- AJUSTES PREMIUM DESKTOP (>= 1024px) --- */
-        @media (min-width: 1024px) {
-            section { padding: 96px 0; }
-
-            /* 1. Aumento Geral de Tipografia */
-            h1 { font-size: 3.8rem; line-height: 1.1; }
-            h2 { font-size: 2.8rem; }
-            h3 { font-size: 1.75rem; }
-            h4 { font-size: 1.5rem; }
-            p, li { font-size: 1.125rem; } /* ~18px para melhor leitura */
-            
-            /* Botões maiores */
-            .btn { padding: 18px 42px; font-size: 1.125rem; }
-
-            /* 2. Otimização Seção Planos */
-            .plan-card {
-                padding: 48px 32px; /* Mais respiro interno */
-                gap: 8px;
-            }
-            
-            /* Nome do Plano */
-            .plan-card h4 {
-                font-size: 1.75rem;
-                margin-bottom: 12px;
-            }
-
-            /* Descrição do Plano */
-            .plan-card > p:first-of-type {
-                font-size: 1rem;
-                color: #666;
-                margin-bottom: 24px;
-                min-height: 48px; /* Alinhamento visual */
-            }
-
-            /* Destaque Preço Promocional */
-            .price {
-                font-size: 3.5rem; /* Aumento significativo */
-                margin: 24px 0 4px 0;
-                line-height: 1;
-            }
-
-            /* Preço Antigo */
-            .price-old {
-                font-size: 1.1rem;
-                margin-bottom: 32px;
-            }
-
-            /* Lista de Benefícios */
-            .check-list li {
-                margin-bottom: 18px; /* Mais espaço entre itens */
-                font-size: 1.05rem;
-            }
-
-            /* Destaque Economia */
-            .economy-text {
-                font-size: 1.1rem;
-                margin-top: 24px;
-                margin-bottom: 24px;
-            }
-            
-            /* Ajuste Container Planos */
-            .plans-container {
-                gap: 32px;
-                align-items: flex-start; /* Garante que cresçam conforme conteúdo mas alinhem topo */
-            }
+        /* --- MOBILE NAV --- */
+        @media (max-width: 1023px) {
+            .nav-menu, .desktop-btn { display: none; }
+            .header i { display: block; font-size: 1.5rem; color: var(--text-main); }
         }
     </style>
 </head>
@@ -251,24 +212,24 @@
                 <li><a href="#medicos">Médicos</a></li>
                 <li><a href="#planos">Planos</a></li>
             </ul>
-            <a href="#planos" class="btn btn-primary desktop-btn">Área do Paciente</a>
-            <i class="ri-menu-line" style="font-size: 1.5rem; display: none;"></i>
+            <a href="#planos" class="btn btn-primary desktop-btn" style="margin:0;">Área do Paciente</a>
+            <i class="ri-menu-line mobile-trigger"></i>
         </div>
     </header>
 
     <section id="inicio" class="hero bg-light">
         <div class="container hero-grid">
             <div class="hero-txt">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Sem filas. Sem burocracia.</span>
-                <h1 style="margin: 16px 0 24px;">Consulta médica de verdade. Sem filas. Sem burocracia.</h1>
-                <p style="margin-bottom: 32px;">Fale com um médico qualificado em minutos, onde você estiver. Atendimento online por vídeo, chat ou telefone — com prescrição digital, pedidos de exames e total segurança dos seus dados.</p>
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; display: block; margin-bottom: 16px;">Sem filas. Sem burocracia.</span>
+                <h1>Consulta médica de verdade. Sem filas. Sem burocracia.</h1>
+                <p>Fale com um médico qualificado em minutos, onde você estiver. Atendimento online por vídeo, chat ou telefone — com prescrição digital, pedidos de exames e total segurança dos seus dados.</p>
                 
                 <div style="display: flex; gap: 16px; flex-wrap: wrap;">
                     <a href="#planos" class="btn btn-primary">Assinar agora</a>
                     <a href="#medicos" class="btn btn-outline">Falar com um médico</a>
                 </div>
                 
-                <p style="font-size: 0.9rem; margin-top: 16px; color: var(--primary-dark);">Comece agora e cuide da sua saúde com quem realmente cuida.</p>
+                <p style="font-size: 0.95rem; margin-top: 24px; color: var(--primary-dark); font-weight: 500;">Comece agora e cuide da sua saúde com quem realmente cuida.</p>
 
                 <div class="hero-tags">
                     <div class="tag"><i class="ri-time-line"></i> Consulta em até 15 minutos</div>
@@ -287,18 +248,18 @@
                 <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paciente feliz">
             </div>
             <div class="txt">
-                <h2 style="color: white; margin-bottom: 24px;">Por que a Poli Doctor existe?</h2>
-                <p style="color: #D1FAE5; margin-bottom: 16px;">Porque saúde não pode esperar. Porque filas não curam. Porque deslocamento não deveria ser um obstáculo.</p>
-                <p style="color: #ffffff; margin-bottom: 24px;">A Poli Doctor nasceu para simplificar o acesso à saúde, conectando pessoas a médicos reais, com rapidez, ética e humanização — usando tecnologia para aproximar, não para complicar.</p>
+                <h2 style="color: white;">Por que a Poli Doctor existe?</h2>
+                <p style="color: #D1FAE5;">Porque saúde não pode esperar. Porque filas não curam. Porque deslocamento não deveria ser um obstáculo.</p>
+                <p style="color: #ffffff;">A Poli Doctor nasceu para simplificar o acesso à saúde, conectando pessoas a médicos reais, com rapidez, ética e humanização — usando tecnologia para aproximar, não para complicar.</p>
                 
-                <div style="display: flex; gap: 24px;">
+                <div style="display: flex; gap: 32px; margin-top: 32px;">
                     <div>
-                        <h3 style="color: var(--accent); font-size: 1.5rem;">100%</h3>
-                        <span style="color: #D1FAE5; font-size: 0.9rem;">Seguro e Criptografado</span>
+                        <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 8px;">100%</h3>
+                        <span style="color: #D1FAE5; font-size: 0.95rem;">Seguro e Criptografado</span>
                     </div>
                     <div>
-                        <h3 style="color: var(--accent); font-size: 1.5rem;">LGPD</h3>
-                        <span style="color: #D1FAE5; font-size: 0.9rem;">Conformidade Total</span>
+                        <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 8px;">LGPD</h3>
+                        <span style="color: #D1FAE5; font-size: 0.95rem;">Conformidade Total</span>
                     </div>
                 </div>
             </div>
@@ -307,7 +268,7 @@
 
     <section>
         <div class="container">
-            <div style="text-align: center; max-width: 600px; margin: 0 auto 64px;">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 80px;">
                 <h2>Atendimento rápido quando você precisa</h2>
                 <p>*Em horário comercial. Fora dele, agendamento no mesmo dia.</p>
             </div>
@@ -340,28 +301,28 @@
         <div class="container split-sec order-flip">
             <div class="txt">
                 <h2>Como funciona?</h2>
-                <p style="margin-bottom: 32px;">Simples. Seguro. E eficiente.</p>
+                <p>Simples. Seguro. E eficiente.</p>
                 
-                <div style="display: flex; flex-direction: column; gap: 24px;">
-                    <div style="display: flex; gap: 16px;">
-                        <div style="background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 32px;">
+                    <div style="display: flex; gap: 24px;">
+                        <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 1.1rem;">1</div>
                         <div>
-                            <h4>Escolha o atendimento</h4>
-                            <p style="font-size: 0.95rem;">Vídeo, chat ou telefone — do jeito mais confortável para você.</p>
+                            <h4 style="margin-bottom: 8px;">Escolha o atendimento</h4>
+                            <p style="margin-bottom: 0;">Vídeo, chat ou telefone — do jeito mais confortável para você.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 16px;">
-                        <div style="background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                    <div style="display: flex; gap: 24px;">
+                        <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 1.1rem;">2</div>
                         <div>
-                            <h4>Fale com um médico</h4>
-                            <p style="font-size: 0.95rem;">Atendimento direto, humano e sem burocracia.</p>
+                            <h4 style="margin-bottom: 8px;">Fale com um médico</h4>
+                            <p style="margin-bottom: 0;">Atendimento direto, humano e sem burocracia.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 16px;">
-                        <div style="background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                    <div style="display: flex; gap: 24px;">
+                        <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 1.1rem;">3</div>
                         <div>
-                            <h4>Receba tudo digitalmente</h4>
-                            <p style="font-size: 0.95rem;">Receitas, exames e orientações ficam no seu histórico médico online.</p>
+                            <h4 style="margin-bottom: 8px;">Receba tudo digitalmente</h4>
+                            <p style="margin-bottom: 0;">Receitas, exames e orientações ficam no seu histórico médico online.</p>
                         </div>
                     </div>
                 </div>
@@ -374,14 +335,13 @@
 
     <section id="planos">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 48px;">
+            <div style="text-align: center; margin-bottom: 64px; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <h2>Planos Poli Doctor</h2>
                 <p>Saúde acessível hoje. Economia real todos os meses.</p>
-            </div>
-
-            <div class="plans-alert">
-                <i class="ri-alarm-warning-line"></i>
-                <span>Oferta especial por tempo limitado: Os valores abaixo são promocionais. Após o encerramento da campanha, os planos terão reajuste médio de 35%.</span>
+                <div class="plans-alert">
+                    <i class="ri-alarm-warning-line" style="font-size: 1.2rem;"></i>
+                    <span>Oferta especial por tempo limitado: Os valores abaixo são promocionais. Após o encerramento da campanha, os planos terão reajuste médio de 35%.</span>
+                </div>
             </div>
 
             <div class="plans-container">
@@ -397,7 +357,7 @@
                         <li><i class="ri-check-line"></i> Sem filas e sem deslocamento</li>
                     </ul>
                     <span class="economy-text">Economia mensal: R$ 14,00</span>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Assinar agora</a>
+                    <a href="#" class="btn btn-outline">Assinar agora</a>
                 </div>
 
                 <div class="plan-card premium">
@@ -414,7 +374,7 @@
                         <li><i class="ri-check-line"></i> Acompanhamento contínuo</li>
                     </ul>
                     <span class="economy-text">Economia mensal: R$ 28,00</span>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Quero o Premium</a>
+                    <a href="#" class="btn btn-primary">Quero o Premium</a>
                 </div>
 
                 <div class="plan-card">
@@ -429,7 +389,7 @@
                         <li><i class="ri-check-line"></i> Mais economia e mais conveniência</li>
                     </ul>
                     <span class="economy-text">Economia mensal: R$ 25,00</span>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Assinar plano família</a>
+                    <a href="#" class="btn btn-outline">Assinar plano família</a>
                 </div>
                 
                  <div class="plan-card">
@@ -445,7 +405,7 @@
                         <li><i class="ri-check-line"></i> Cuidado integral e contínuo</li>
                     </ul>
                     <span class="economy-text">Economia mensal: R$ 42,00</span>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Quero o plano completo</a>
+                    <a href="#" class="btn btn-outline">Quero o plano completo</a>
                 </div>
             </div>
         </div>
@@ -453,12 +413,12 @@
 
     <section class="bg-accent-soft" style="text-align: center;">
         <div class="container">
-            <h2 style="color: #92400E; margin-bottom: 24px;">Sua saúde não pode esperar.<br>Seu desconto também não.</h2>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <h2 style="color: #92400E; margin-bottom: 32px;">Sua saúde não pode esperar.<br>Seu desconto também não.</h2>
+            <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
                 <a href="#planos" class="btn btn-accent">Assinar agora com desconto</a>
                 <a href="#medicos" class="btn" style="background: white; border: 1px solid #FCD34D; color: #B45309;">Falar com um médico em minutos</a>
             </div>
-            <p style="margin-top:20px; font-weight:bold; color:#B45309;">Travar o valor promocional hoje</p>
+            <p style="margin-top: 32px; font-weight:bold; color:#B45309;">Travar o valor promocional hoje</p>
         </div>
     </section>
 
@@ -466,8 +426,8 @@
         <div class="container">
             <div class="ft-grid">
                 <div class="ft-col">
-                    <h4 style="color: var(--primary); font-size: 1.4rem;">Poli Doctor</h4>
-                    <p style="color: #9CA3AF; font-size: 0.9rem;">Plataforma de saúde conectada. Cuidando de você com tecnologia e humanização.</p>
+                    <h4 style="color: var(--primary); font-size: 1.5rem;">Poli Doctor</h4>
+                    <p style="color: #9CA3AF; margin-bottom: 0;">Plataforma de saúde conectada. Cuidando de você com tecnologia e humanização.</p>
                 </div>
                 <div class="ft-col">
                     <h4>Institucional</h4>
@@ -484,14 +444,14 @@
                 <div class="ft-col">
                     <h4>Contato</h4>
                     <a href="#">suporte@polidoctor.com.br</a>
-                    <div style="margin-top: 16px; display: flex; gap: 16px;">
-                        <i class="ri-instagram-line" style="font-size: 1.2rem; color: #9CA3AF;"></i>
-                        <i class="ri-facebook-fill" style="font-size: 1.2rem; color: #9CA3AF;"></i>
-                        <i class="ri-linkedin-fill" style="font-size: 1.2rem; color: #9CA3AF;"></i>
+                    <div style="margin-top: 24px; display: flex; gap: 16px;">
+                        <i class="ri-instagram-line" style="font-size: 1.5rem; color: #9CA3AF;"></i>
+                        <i class="ri-facebook-fill" style="font-size: 1.5rem; color: #9CA3AF;"></i>
+                        <i class="ri-linkedin-fill" style="font-size: 1.5rem; color: #9CA3AF;"></i>
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; font-size: 0.8rem; color: #4B5563;">
+            <div style="text-align: center; font-size: 0.9rem; color: #4B5563;">
                 &copy; 2024 Poli Doctor. Todos os direitos reservados. CNPJ 00.000.000/0001-00
             </div>
         </div>
