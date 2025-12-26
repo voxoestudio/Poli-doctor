@@ -14,12 +14,12 @@
     <style>
         /* --- DESIGN SYSTEM: PREMIUM HEALTHTECH --- */
         :root {
-            /* Cores extraídas e refinadas da imagem de referência */
-            --primary: #059669; /* Verde da marca */
-            --primary-dark: #064E3B; /* Verde Profundo */
-            --primary-light: #ECFDF5; /* Verde Menta */
+            /* Cores inalteradas */
+            --primary: #059669;
+            --primary-dark: #064E3B;
+            --primary-light: #ECFDF5;
             
-            --accent: #F59E0B; /* Amarelo/Dourado */
+            --accent: #F59E0B;
             --accent-hover: #D97706;
             
             --text-main: #111827;
@@ -30,7 +30,7 @@
             --border: #E5E7EB;
             --radius: 16px;
             
-            /* Sombras de Alta Performance */
+            /* Sombras */
             --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
             
@@ -49,14 +49,15 @@
             padding-top: var(--header-h);
         }
 
+        /* Títulos Base (Mobile First) */
         h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); line-height: 1.2; }
-        p { color: var(--text-body); font-weight: 400; font-size: 1.05rem; }
+        p { color: var(--text-body); font-weight: 400; font-size: 1rem; }
         img { max-width: 100%; display: block; border-radius: var(--radius); }
         a { text-decoration: none; transition: 0.3s; }
 
         /* --- UTILS --- */
         .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-        section { padding: 96px 0; }
+        section { padding: 64px 0; } /* Padding base mobile */
         
         .bg-white { background: white; }
         .bg-light { background: var(--bg-alt); }
@@ -80,7 +81,7 @@
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
             padding: 14px 32px; border-radius: 50px; font-weight: 600; cursor: pointer;
-            transition: all 0.2s; border: none;
+            transition: all 0.2s; border: none; font-size: 1rem;
         }
         .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
         .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
@@ -144,11 +145,13 @@
             border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
         }
         
-        .price { font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 16px 0 8px; }
-        .price-old { text-decoration: line-through; color: var(--text-body); font-size: 0.9rem; opacity: 0.7; }
+        /* Preços e Listas (Base) */
+        .price { font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 16px 0 8px; display: block; }
+        .price-old { text-decoration: line-through; color: var(--text-body); font-size: 0.9rem; opacity: 0.7; display: block; }
         .check-list { list-style: none; margin: 24px 0; flex-grow: 1; }
-        .check-list li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.9rem; }
-        .check-list i { color: var(--primary); flex-shrink: 0; }
+        .check-list li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; }
+        .check-list i { color: var(--primary); flex-shrink: 0; margin-top: 4px; }
+        .economy-text { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-top: 10px; display: block; }
 
         /* --- FOOTER --- */
         .footer { background: #111827; color: white; padding: 80px 0 32px; }
@@ -157,7 +160,7 @@
         .ft-col a { display: block; color: #9CA3AF; margin-bottom: 12px; }
         .ft-col a:hover { color: var(--primary); }
 
-        /* --- RESPONSIVIDADE --- */
+        /* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 960px) {
             .hero-grid, .split-sec { grid-template-columns: 1fr; gap: 40px; }
             .nav-menu, .desktop-btn { display: none; }
@@ -165,6 +168,73 @@
             .order-flip .img { order: unset; }
             .plan-card.premium { transform: scale(1); }
             .hero h1 { font-size: 2.5rem; }
+        }
+
+        /* --- AJUSTES PREMIUM DESKTOP (>= 1024px) --- */
+        @media (min-width: 1024px) {
+            section { padding: 96px 0; }
+
+            /* 1. Aumento Geral de Tipografia */
+            h1 { font-size: 3.8rem; line-height: 1.1; }
+            h2 { font-size: 2.8rem; }
+            h3 { font-size: 1.75rem; }
+            h4 { font-size: 1.5rem; }
+            p, li { font-size: 1.125rem; } /* ~18px para melhor leitura */
+            
+            /* Botões maiores */
+            .btn { padding: 18px 42px; font-size: 1.125rem; }
+
+            /* 2. Otimização Seção Planos */
+            .plan-card {
+                padding: 48px 32px; /* Mais respiro interno */
+                gap: 8px;
+            }
+            
+            /* Nome do Plano */
+            .plan-card h4 {
+                font-size: 1.75rem;
+                margin-bottom: 12px;
+            }
+
+            /* Descrição do Plano */
+            .plan-card > p:first-of-type {
+                font-size: 1rem;
+                color: #666;
+                margin-bottom: 24px;
+                min-height: 48px; /* Alinhamento visual */
+            }
+
+            /* Destaque Preço Promocional */
+            .price {
+                font-size: 3.5rem; /* Aumento significativo */
+                margin: 24px 0 4px 0;
+                line-height: 1;
+            }
+
+            /* Preço Antigo */
+            .price-old {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+
+            /* Lista de Benefícios */
+            .check-list li {
+                margin-bottom: 18px; /* Mais espaço entre itens */
+                font-size: 1.05rem;
+            }
+
+            /* Destaque Economia */
+            .economy-text {
+                font-size: 1.1rem;
+                margin-top: 24px;
+                margin-bottom: 24px;
+            }
+            
+            /* Ajuste Container Planos */
+            .plans-container {
+                gap: 32px;
+                align-items: flex-start; /* Garante que cresçam conforme conteúdo mas alinhem topo */
+            }
         }
     </style>
 </head>
@@ -317,7 +387,7 @@
             <div class="plans-container">
                 <div class="plan-card">
                     <h4>Plano Individual</h4>
-                    <p style="font-size:0.9rem; color:#666;">Ideal para quem quer praticidade e segurança no dia a dia</p>
+                    <p>Ideal para quem quer praticidade e segurança no dia a dia</p>
                     <span class="price">R$ 39,90 / mês</span>
                     <span class="price-old">De R$ 53,90 / mês</span>
                     <ul class="check-list">
@@ -326,14 +396,14 @@
                         <li><i class="ri-check-line"></i> Prescrição digital válida</li>
                         <li><i class="ri-check-line"></i> Sem filas e sem deslocamento</li>
                     </ul>
-                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">Economia mensal: R$ 14,00</p>
-                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top:16px;">Assinar agora</a>
+                    <span class="economy-text">Economia mensal: R$ 14,00</span>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Assinar agora</a>
                 </div>
 
                 <div class="plan-card premium">
                     <div class="badge-pop">Recomendado</div>
                     <h4 style="color: var(--primary);">Plano Premium</h4>
-                    <p style="font-size:0.9rem; color:#666;">Cuidado contínuo, acompanhamento e prioridade</p>
+                    <p>Cuidado contínuo, acompanhamento e prioridade</p>
                     <span class="price">R$ 79,90 / mês</span>
                     <span class="price-old">De R$ 107,90 / mês</span>
                     <ul class="check-list">
@@ -343,13 +413,13 @@
                         <li><i class="ri-check-line"></i> Histórico médico digital completo</li>
                         <li><i class="ri-check-line"></i> Acompanhamento contínuo</li>
                     </ul>
-                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">Economia mensal: R$ 28,00</p>
-                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top:16px;">Quero o Premium</a>
+                    <span class="economy-text">Economia mensal: R$ 28,00</span>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Quero o Premium</a>
                 </div>
 
                 <div class="plan-card">
                     <h4>Plano Família</h4>
-                    <p style="font-size:0.9rem; color:#666;">Mais saúde para quem cuida de todos</p>
+                    <p>Mais saúde para quem cuida de todos</p>
                     <span class="price">R$ 69,90 / mês</span>
                     <span class="price-old">De R$ 94,90 / mês</span>
                     <ul class="check-list">
@@ -358,13 +428,13 @@
                         <li><i class="ri-check-line"></i> Prescrição e pedidos de exames digitais</li>
                         <li><i class="ri-check-line"></i> Mais economia e mais conveniência</li>
                     </ul>
-                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">Economia mensal: R$ 25,00</p>
-                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top:16px;">Assinar plano família</a>
+                    <span class="economy-text">Economia mensal: R$ 25,00</span>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Assinar plano família</a>
                 </div>
                 
                  <div class="plan-card">
                     <h4>Plano Família Premium</h4>
-                    <p style="font-size:0.9rem; color:#666;">O cuidado completo para toda a família</p>
+                    <p>O cuidado completo para toda a família</p>
                     <span class="price">R$ 119,90 / mês</span>
                     <span class="price-old">De R$ 161,90 / mês</span>
                     <ul class="check-list">
@@ -374,8 +444,8 @@
                         <li><i class="ri-check-line"></i> Histórico médico individual por membro</li>
                         <li><i class="ri-check-line"></i> Cuidado integral e contínuo</li>
                     </ul>
-                    <p style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-top:10px;">Economia mensal: R$ 42,00</p>
-                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top:16px;">Quero o plano completo</a>
+                    <span class="economy-text">Economia mensal: R$ 42,00</span>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Quero o plano completo</a>
                 </div>
             </div>
         </div>
